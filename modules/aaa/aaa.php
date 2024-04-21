@@ -1,5 +1,6 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Response;
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -19,5 +20,12 @@ class Aaa extends Module
 
         $this->displayName = $this->l('Tsl module test');
         $this->description = $this->l('Module test d\'apresÃs tuto');
+
+        //$response = new Response();
+        //$response->setContent('<html><body>Hello stuff!</body></html>');
+        //$response->setStatusCode(Response::HTTP_OK);
+        //$response->headers->set('Content-Type', 'text/html');
+
+        //$response->send();
     }
 }
