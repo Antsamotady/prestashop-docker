@@ -118,9 +118,9 @@ app/config/config.php
 
 # Themes, modules and overrides
 
-modules/*
-override/*
-themes/*/
+#modules/*
+#override/*
+#themes/*/
 !themes/classic
 !themes/_core
 !themes/_libraries

@@ -40,6 +40,8 @@
     )) }}
   {% endblock %}
 
+  {{ dump('test : OK') }}
+
   {% block order_grid_row %}
     {% include '@PrestaShop/Admin/Common/Grid/grid_panel.html.twig' with {'grid': orderGrid} %}
   {% endblock %}
