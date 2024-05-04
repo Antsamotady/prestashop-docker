@@ -68,5 +68,20 @@ class Training extends Module implements WidgetInterface
             'TrainingParameter' => Configuration::get('TRAINING_PARAMETER')
         ];
     }
+
+    public function hookDisplayHeader($params)
+    {
+        $this->context->controller->registerStylesheet(
+            'modules-training',
+            'modules/'.$this->name.'/views/assets/css/training.css',
+            ['media' => 'all', 'priority' => 150]
+        );
+
+        $this->context->controller->registerJavascript(
+            'modules-training',
+            'modules/'.$this->name.'/views/assets/js/training.js',
+            ['position' => 'bottom', 'priority' => 150]
+        );
+    }
 }
 
