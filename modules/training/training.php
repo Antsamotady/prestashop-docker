@@ -145,5 +145,17 @@ class Training extends Module implements WidgetInterface
 
         return $helper->generateForm($fields_form);
     }
+
+    //public function hookDisplayLeftColumn($params)
+    //{
+    //    $twigEnvironment = new Twig_Environment(
+    //        new Twig_Loader_Filesystem(_DIR_.'/views/templates/front')
+    //    );
+
+    //    return $twigEnvironment->render(
+    //        'displayLeftColumn.html.twig',
+    //        $this->getWidgetVariables('displayLeftColumn', $param)
+    //    );
+    //}
 }
 
