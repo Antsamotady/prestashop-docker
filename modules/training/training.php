@@ -83,5 +83,67 @@ class Training extends Module implements WidgetInterface
             ['position' => 'bottom', 'priority' => 150]
         );
     }
+
+    public function getContent()
+    {
+        $output = '';
+
+        if (Tools::isSubmit('submit'.$this->name)) {
+            $moduleParameter = Tools::getValue('TRAINING_PARAMETER');
+
+            if (!$moduleParameter ||
+                empty($moduleParameter) ||
+                !Validate::isGenericName($moduleParameter)) {
+                $output .= $this->displayError(
+                    $this->l('Invalid TRAINING_PARAMETER value')
+                );
+            } else {
+                Configuration::updateValue('TRAINING_PARAMETER', $moduleParameter);
+                $output .= $this->displayConfirmation(
+                    $this->l('It\'s allright, TRAINING_PARAMETER is updated')
+                );
+            }
+        }
+
+        return $output.$this->displayForm();
+    }
+
+    public function displayForm()
+    {
+        $default_lang = (int)Configuration::get('PS_LANG_DEFAULT');
+        $fields_form = [];
+        $fields_form[0]['form'] = [
+            'legend' => [
+                'title' => $this->l('Training setting')
+            ],
+            'input' => [
+                [
+                    'type' => 'text',
+                    'label' => $this->l('Configuration value'),
+                    'name' => 'TRAINING_PARAMETER',
+                    'size' => 20,
+                    'required' => true
+                ]
+            ],
+            'submit' => [
+                'title' => $this->l('Training setting')
+            ]
+        ];
+
+        $helper = new HelperForm();
+        $helper->module = $this;
+        $helper->name_controller = $this->name;
+        $helper->token = Tools::getAdminTokenLite('AdminModules');
+        $helper->currentIndex = AdminController::$currentIndex
+            .'&configure='
+            .$this->name;
+        $helper->default_form_language = $default_lang; 
+        $helper->allow_employee_form_lang = $default_lang;
+        $helper->title = $this->displayName;
+        $helper->submit_action = 'submit'.$this->name;
+        $helper->fields_value['TRAINING_PARAMETER'] = Configuration::get('TRAINING_PARAMETER');
+
+        return $helper->generateForm($fields_form);
+    }
 }
 
