@@ -5,6 +5,7 @@
  */
 
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -34,6 +35,9 @@ class Training extends Module implements WidgetInterface
         if (!parent::install() ||
             !$this->registerHook('displayLeftColumn') ||
             !$this->registerHook('displayHeader') ||
+            !$this->registerHook('actionGeneralPageForm') ||
+            !$this->registerHook('actionGeneralPageSave') ||
+            !Configuration::updateValue('TRAINING_SHOP_TSILA', 'Tsl shop training') ||
             !Configuration::updateValue('TRAINING_PARAMETER', 'Tsl value')) {
             return false;
         }
@@ -44,7 +48,8 @@ class Training extends Module implements WidgetInterface
     public function uninstall()
     {
         if (!parent::uninstall() ||
-            !Configuration::deleteByName('TRAINING_PARAMETER')) {
+            !Configuration::deleteByName('TRAINING_PARAMETER') ||
+            !Configuration::deleteByName('TRAINING_SHOP_TSILA')) {
             return false;
         }
 
@@ -146,16 +151,26 @@ class Training extends Module implements WidgetInterface
         return $helper->generateForm($fields_form);
     }
 
-    //public function hookDisplayLeftColumn($params)
-    //{
-    //    $twigEnvironment = new Twig_Environment(
-    //        new Twig_Loader_Filesystem(_DIR_.'/views/templates/front')
-    //    );
+    public function hookActionGeneralPageForm(array $hookParams)
+    {
+        $formBuilder = $hookParams['form_builder'];
+        
+        $formBuilder->add('shop_tsila', TextType::class, [
+                'label' => 'Tsila shop',
+                'required' => false,
+                'data' => $this->get('prestashop.adapter.legacy.configuration')
+                               ->get('TRAINING_SHOP_TSILA')
+            ]
+        );
+    }
 
-    //    return $twigEnvironment->render(
-    //        'displayLeftColumn.html.twig',
-    //        $this->getWidgetVariables('displayLeftColumn', $param)
-    //    );
-    //}
+    public function hookActionGeneralPageSave(array $hookParams)
+    {
+        $tsila = $hookParams['form_data']['shop_tsila'];
+
+        $this->get('prestashop.adapter.legacy.configuration')
+             ->set('TRAINING_SHOP_TSILA', $tsila);
+    }
+
 }
 
