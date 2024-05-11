@@ -1,0 +1,27 @@
+{
+    "name": "tsl/training",
+    "description": "My first training module",
+    "authors": [
+        {
+            "name": "Hasina Tsilavina",
+            "homepage": "https://www.prestashop.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "prepend-autoloader": false
+    },
+    "autoload": {
+        "psr-4": {
+            "Tsl\\Training\\": "src/"
+        },
+        "classmap": ["training.php"],
+        "exclude-from-classmap": []
+    },
+    "type": "prestashop-module",
+    "license": "AFL-3.0"
+}
+

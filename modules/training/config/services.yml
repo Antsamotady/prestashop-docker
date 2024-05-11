@@ -1,0 +1,7 @@
+services:
+  training.command.shop_status_command:
+    class: 'Tsl\Training\Command\ShopStatusCommand'
+    tags: 
+      - { name: shop.command }
+  
+
