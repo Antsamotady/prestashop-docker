@@ -1,0 +1,23 @@
+{
+    "name": "prestashop/itekblock",
+    "authors": [
+        {
+            "name": "Itekcom",
+            "email": "miando.itek@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "PrestaShop\\Module\\Itekblock\\": "src/"
+      },
+      "classmap": [
+        "itekblock.php",
+        "classes/ItekblockObject.php"
+      ],
+      "exclude-from-classmap": [],
+      "config": {
+        "prepend-autoloader": false
+      },
+      "type": "prestashop-module"
+    }
+}

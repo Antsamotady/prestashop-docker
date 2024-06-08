@@ -1,0 +1,289 @@
+/* block hook for itekblock-reassurance style */
+#itkblock-reassurance .itkblock-container {
+  background-color: #b0dff3;
+}   
+#itkblock-reassurance .itkblock-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#itkblock-reassurance .itkblock-item {
+    flex: 1 1 calc(20% - 20px); /* Adjust the percentage as needed */
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+#itkblock-reassurance .itkblock-content {
+    align-items: center; /* Vertically center items */
+}
+
+#itkblock-reassurance .itkblock-image {
+    max-width: 45px; /* Adjust the max-width as needed */
+    max-height: 45px; /* Adjust the max-height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+/* block hook for itekblock-header style */
+#itkblock-header ul li{
+   margin-right: 20px;
+}
+
+#itkblock-header .itkblock-image {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+#itkblock-header .itkblock-element a{
+    display: flex;
+    align-items: center; /* Vertically align items */
+}
+
+#itkblock-header .itkblock-image {
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+#itkblock-header .itkblock-content {
+    flex: 1;
+}
+
+#itkblock-header .itkblock-title {
+    display: none;
+}
+
+#itkblock-header .itkblock-description p{
+    color: #fff !important;
+}
+
+/* block hook for itekblock-right style */
+#itkblock-right ul li{
+    margin-right: 20px;
+ }
+
+ #itkblock-right .itkblock-image {
+    display: none;
+}
+
+#itkblock-right .itkblock-content {
+    flex: 1;
+}
+
+#itkblock-right .itkblock-title {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+#itkblock-right .itkblock-description {
+    font-size: 8px;
+}
+
+/* block hook for itekblock-newsletter style */
+.newsletterContainer {
+    display: flex;
+    align-items: stretch; /* Align items to have the same height */
+}
+
+/* Style for itkblock-container */
+#itkblock-newsletter {
+    flex: 1; /* Take remaining space in the flex container */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+/* Style for form-nl-container */
+#itkblock-newsletter .form-nl-container {
+    flex: 1; /* Take remaining space in the flex container */
+}
+
+/* Additional styles for better alignment */
+#itkblock-newsletter .itkblock-content {
+    text-align: center; /* Center the content within itkblock-content */
+}
+
+#itkblock-newsletter .input-wrapper {
+    width: 100%; /* Full width for the input wrapper */
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+#itkblock-newsletter .btn-primary {
+    width: 100%; /* Full width for the submit button */
+}
+#itkblock-newsletter ul li{
+    margin-right: 20px;
+ }
+
+ #itkblock-newsletter .itkblock-content {
+    flex: 1;
+}
+
+#itkblock-newsletter .itkblock-title {
+    display: none;
+}
+
+#itkblock-newsletter .itkblock-description {
+    font-size: 15px;
+}
+
+/* block hook for itekblock-Ars style */
+#itkblock-ars .itkblock-container {
+    background-color: #b0dff3;
+  }   
+#itkblock-ars .itkblock-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+}
+
+#itkblock-ars .itkblock-title {
+    display: none;
+}
+
+#itkblock-ars .itkblock-description {
+    display: none;
+}
+  
+#itkblock-ars .itkblock-item {
+      flex: 1 1 calc(20% - 20px); /* Adjust the percentage as needed */
+      margin: 10px;
+      box-sizing: border-box;
+}
+#itkblock-ars .itkblock-content {
+      align-items: center; /* Vertically center items */
+ }
+  
+
+/* block hook for itekblock-seo style */
+#itkblock-seo {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+}
+
+#itkblock-seo .itkblock-element {
+    text-align: center; /* Center the content inside the element */
+}
+
+#itkblock-seo .itkblock-title {
+    display: none;
+}
+
+#itkblock-seo .itkblock-description {
+    padding-top: 30px; /* Add padding to the top */
+    padding-bottom: 10px; /* Add padding to the bottom */
+}
+
+/* block hook for itekblock-middle style */
+#itkblock-middle .itkblock-container {
+    background-color: #b0dff3;
+  }
+
+#itkblock-middle .itkblock-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-end;
+  }
+  
+  #itkblock-middle .itkblock-title {
+    display: none;
+ }
+
+#itkblock-middle .itkblock-item {
+      flex: 1 1 calc(20% - 20px); /* Adjust the percentage as needed */
+      margin: 10px;
+      box-sizing: border-box;
+  }
+  
+  #itkblock-middle .itkblock-content {
+      display: flex;
+      align-items: center; /* Vertically center items */
+  }
+
+.item-hook {
+    margin-bottom: 20px;
+}
+
+.position, .hook {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* block hook for itekblock-pub style */
+/* block hook for itekblock-pub style */
+#itkblock-pub .itkblock-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#itkblock-pub .itkblock-item {
+    position: relative; /* Add this line to make positioning of absolute elements relative to this item */
+    padding: 20px 50px;
+}
+
+#itkblock-pub .itkblock-image {
+    /* Add styles for the image */
+    max-width: 409px;
+    height: auto;
+}
+
+#itkblock-pub .itkblock-btn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border: 1px solid rgb(254, 251, 251); 
+    border-radius: 5px;
+}
+
+#itkblock-pub .btn:before{
+    background-color: white !important;
+}
+
+#itkblock-pub .itkblock-title {
+    display: none;
+}
+
+#itkblock-pub .itkblock-description {
+    display: none;
+}
+
+
+/* Add responsive styles for larger screens */
+@media (min-width: 768px) {
+    .item-hook {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .position, .hook {
+        margin-right: 20px;
+    }
+}
+
+/* Add styles for the image element */
+.item-hook {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.hook {
+    flex: 1;
+}
+
+.hook img {
+    max-width: 400px !important;
+    height: auto;
+    margin-right: 30px; /* Adjust the margin as needed */
+}
+
+
