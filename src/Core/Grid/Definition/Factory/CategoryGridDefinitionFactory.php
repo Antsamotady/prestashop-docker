@@ -137,6 +137,14 @@ final class CategoryGridDefinitionFactory extends AbstractFilterableGridDefiniti
                     ])
             )
             ->add(
+                (new HtmlColumn('additional_description'))
+                    ->setName($this->trans('Additional Description', [], 'Admin.Global'))
+                    ->setOptions([
+                        'field' => 'additional_description',
+                        'sortable' => false,
+                    ])
+            )
+            ->add(
                 (new DataColumn('products_count'))
                     ->setName($this->trans('Products', [], 'Admin.Global'))
                     ->setOptions([
@@ -216,6 +224,16 @@ final class CategoryGridDefinitionFactory extends AbstractFilterableGridDefiniti
                         'required' => false,
                         'attr' => [
                             'placeholder' => $this->trans('Search description', [], 'Admin.Actions'),
+                        ],
+                    ])
+            )
+            ->add(
+                (new Filter('additional_description', TextType::class))
+                    ->setAssociatedColumn('additional_description')
+                    ->setTypeOptions([
+                        'required' => false,
+                        'attr' => [
+                            'placeholder' => $this->trans('Search additional description', [], 'Admin.Actions'),
                         ],
                     ])
             )

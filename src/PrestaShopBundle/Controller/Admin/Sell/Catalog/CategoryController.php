@@ -712,6 +712,7 @@ class CategoryController extends FrameworkBundleAdminController
             'id_category' => $this->trans('ID', 'Admin.Global'),
             'name' => $this->trans('Name', 'Admin.Global'),
             'description' => $this->trans('Description', 'Admin.Global'),
+            'additional_description' => $this->trans('Additional Description', 'Admin.Global'),
             'position' => $this->trans('Position', 'Admin.Global'),
             'active' => $this->trans('Displayed', 'Admin.Global'),
         ];
@@ -723,6 +724,7 @@ class CategoryController extends FrameworkBundleAdminController
                 'id_category' => $record['id_category'],
                 'name' => $record['name'],
                 'description' => $record['description'],
+                'additional_description' => $record['additional_description'],
                 'position' => $record['position'],
                 'active' => $record['active'],
             ];
