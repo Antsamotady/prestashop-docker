@@ -144,6 +144,7 @@ class blockdownpdf extends Module implements WidgetInterface
             `id_blockdownpdf` int(10) unsigned NOT NULL AUTO_INCREMENT,
             `icon` varchar(255) NULL,
             `custom_icon` varchar(255) NULL,
+            `custom_pdf` varchar(255) NULL,
             `status` int(10) unsigned NOT NULL,
             `position` int(10) unsigned NOT NULL,
             `type_link` int(10) unsigned NULL,

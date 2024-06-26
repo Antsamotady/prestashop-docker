@@ -26,6 +26,7 @@ class BlockdownpdfActivity extends ObjectModel
     public $id;
     public $icon;
     public $custom_icon;
+    public $custom_pdf;
     public $title;
     public $description;
     public $status;
@@ -46,6 +47,7 @@ class BlockdownpdfActivity extends ObjectModel
         'fields' => [
             'icon' => ['type' => self::TYPE_STRING, 'validate' => 'isCleanHtml', 'size' => 255],
             'custom_icon' => ['type' => self::TYPE_STRING, 'validate' => 'isCleanHtml', 'size' => 255],
+            'custom_pdf' => ['type' => self::TYPE_STRING, 'validate' => 'isCleanHtml', 'size' => 255],
             'status' => ['type' => self::TYPE_BOOL, 'validate' => 'isBool', 'required' => true],
             'position' => ['type' => self::TYPE_INT, 'validate' => 'isunsignedInt', 'required' => false],
             'type_link' => ['type' => self::TYPE_INT, 'validate' => 'isunsignedInt', 'required' => false],

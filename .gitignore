@@ -31,6 +31,7 @@
 # Images
 /img/*
 /modules/**/img/*
+/modules/**/dist/*
 !/img/.htaccess
 !/img/index.php
 !/img/404.gif

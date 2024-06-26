@@ -352,6 +352,8 @@ $(window).ready(() => {
 
   // Tab Content : Edit : Save
   $(document).on('click', '#saveContentConfiguration', function editTabContentSave() {
+    let pdfSelected = $('.show-rea-block.active input[type="file"].pdf-file')[0];
+    const { files2 } = $('.show-rea-block.active input[type="file"].pdf-file')[0];
     const dataToSave = {};
     const blockId = $(this).attr('data-id');
     const imgIcon = $('.bld_picto_showing:visible img.psr-picto');
@@ -393,6 +395,7 @@ $(window).ready(() => {
     formData.append('ajax', true);
     formData.append('action', 'SaveBlockContent');
     formData.append('file', imgSelected);
+    formData.append('file2', pdfSelected);
     formData.append('id_block', blockId);
     formData.append('lang_values', JSON.stringify(dataToSave));
     formData.append('picto', iconSrc);

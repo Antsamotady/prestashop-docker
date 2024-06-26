@@ -19,7 +19,7 @@
 
 <div id="blockDisplay"
     class="panel panel-default panel-blockdownpdf col-lg-10 col-xs-10 col-lg-offset-1 col-xs-offset-1 inactive">
-    <div class="panel-heading tsl">
+    <div class="panel-heading">
         {l s='Blockdownpdf Block' d='Modules.Blockdownpdf.Admin'}
     </div>
     {include file="./config_elements/blockdownpdf_block.tpl"}
@@ -27,6 +27,8 @@
         <div class="panel-body-0 panel-body show-rea-block inactive">
             {* icon *}
             {include file="./config_elements/icon.tpl"}
+            {* pdf *}
+            {include file="./config_elements/pdf.tpl"}
             {* language *}
             {include file="./config_elements/language.tpl"}
             {foreach from=$languages item=language}
@@ -48,6 +50,8 @@
             <div class="panel-body-{$block['id_blockdownpdf']} panel-body show-rea-block inactive">
                 {* icon *}
                 {include file="./config_elements/icon.tpl"}
+                {* pdf *}
+                {include file="./config_elements/pdf.tpl"}
                 {* language *}
                 {include file="./config_elements/language.tpl"}
                 {foreach from=$languages item=language}
