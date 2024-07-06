@@ -10,7 +10,6 @@
 
 declare(strict_types=1);
  
-//use DateTime;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 use PrestaShop\Module\BlockRecrutement\Install\Installer;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -68,7 +67,7 @@ class BlockRecrutement extends Module implements WidgetInterface
     public function renderWidget($hookName, array $params)
     {
        $this->smarty->assign([
-           'latest_recrutements' => $this->getWidgetVariables($hookName, $params)
+           'all_recrutements' => $this->getWidgetVariables($hookName, $params)
        ]);
 
        return $this->fetch(

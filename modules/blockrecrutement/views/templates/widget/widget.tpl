@@ -5,7 +5,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit error saepe rem eius, optio aliquid accusamus eaque dolor praesentium possimus, eos asperiores architecto voluptas adipisci sint ea nihil voluptatibus repellendus.
         </p>
         <p>
-            {dump($latest_recrutements)}
+            {dump($all_recrutements)}
         </p>
     </div>
 {/block}

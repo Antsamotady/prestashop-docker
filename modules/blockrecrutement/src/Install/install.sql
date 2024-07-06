@@ -1,1 +1,1 @@
-ALTER TABLE _DB_PREFIX_cms_lang ADD `date_upd_page` VARCHAR(32) NOT NULL DEFAULT '';
+ALTER TABLE _DB_PREFIX_cms_lang ADD `date_upd_page` DATETIME NOT NULL;

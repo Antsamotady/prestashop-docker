@@ -20,7 +20,7 @@ class CMS extends CMSCore
         $id = null,
         $idLang = null
     ) {
-        self::$definition['fields']['date_upd_page'] = ['type' => self::TYPE_STRING, 'lang' => true, 'size' => 32];
+        self::$definition['fields']['date_upd_page'] = ['type' => self::TYPE_DATE, 'lang' => true];
         parent::__construct($id, $idLang);
     }
 }
