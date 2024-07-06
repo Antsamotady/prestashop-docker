@@ -14,22 +14,23 @@ class CMS extends CMSCore
     
     
     
+    
     /*
     * module: blockrecrutement
-    * date: 2024-07-04 14:49:47
+    * date: 2024-07-04 15:39:03
     * version: 1.0.0
     */
     public $date_upd_page;
     /*
     * module: blockrecrutement
-    * date: 2024-07-04 14:49:47
+    * date: 2024-07-04 15:39:03
     * version: 1.0.0
     */
     public function __construct(
         $id = null,
         $idLang = null
     ) {
-        self::$definition['fields']['date_upd_page'] = ['type' => self::TYPE_STRING, 'lang' => true, 'size' => 32];
+        self::$definition['fields']['date_upd_page'] = ['type' => self::TYPE_DATE, 'lang' => true];
         parent::__construct($id, $idLang);
     }
 }
