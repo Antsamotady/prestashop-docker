@@ -63,6 +63,18 @@ class BlockRecrutement extends Module implements WidgetInterface
         return $installer->uninstall($this);
     }
 
+    public function getContent()
+    {
+        $id_lang = $this->context->language->id;
+        $allCms = CMS::listCms($id_lang);
+        $allCmsCategories = $this->getSimpleCategoriesByName($id_lang, 'Recrutement');
+    
+        $this->context->smarty->assign([
+            'allCms' => $allCms
+        ]);
+    
+        return $this->display(__FILE__, 'views/templates/admin/configure.tpl');
+    }
 
     public function renderWidget($hookName, array $params)
     {
@@ -77,7 +89,9 @@ class BlockRecrutement extends Module implements WidgetInterface
 
     public function getWidgetVariables($hookName, array $params)
     {
-        return $this->getCMSPagesByCmsCategory(2);
+        $id_lang = $this->context->language->id;
+        $recrutementID = $this->getSimpleCategoriesByName($id_lang, 'Recrutement');
+        return $this->getCMSPagesByCmsCategory($recrutementID[0]["id_cms_category"]);
     }
 
     public function hookActionCmsPageFormBuilderModifier(array $params)
@@ -145,5 +159,16 @@ class BlockRecrutement extends Module implements WidgetInterface
         ';
 
         return Db::getInstance()->executeS($sql);
+    }
+
+    protected function getSimpleCategoriesByName($id_lang, $name)
+    {
+        return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
+		SELECT c.`id_cms_category`, cl.`name`
+		FROM `' . _DB_PREFIX_ . 'cms_category` c
+		LEFT JOIN `' . _DB_PREFIX_ . 'cms_category_lang` cl ON (c.`id_cms_category` = cl.`id_cms_category`)
+		WHERE cl.`id_lang` = ' . (int) $id_lang . '
+		AND cl.`name` = "' . (string) $name . '"'
+        );
     }
 }
