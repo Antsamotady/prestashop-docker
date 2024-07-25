@@ -1,0 +1,1 @@
+ALTER TABLE _DB_PREFIX_address DROP COLUMN `quartier`;

@@ -1,0 +1,1 @@
+ALTER TABLE _DB_PREFIX_address ADD `quartier` VARCHAR(64) NOT NULL DEFAULT '';

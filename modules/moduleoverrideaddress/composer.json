@@ -1,0 +1,21 @@
+{
+  "name": "prestashop/moduleoverrideaddress",
+  "authors": [
+    {
+      "name": "Garry",
+      "email": "garry@softibox.com"
+    },
+    {
+      "name": "Softibox team"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PrestaShop\\Module\\ModuleOverrideAddress\\": "src/"
+    },
+    "config": {
+      "prepend-autoloader": false
+    },
+    "type": "prestashop-module"
+  }
+}
