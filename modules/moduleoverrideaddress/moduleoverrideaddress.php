@@ -11,6 +11,7 @@
 declare(strict_types=1);
 
 use PrestaShop\Module\ModuleOverrideAddress\Install\Installer;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -59,5 +60,49 @@ class ModuleOverrideAddress extends Module
         $installer = new Installer();
 
         return $installer->uninstall($this);
+    }
+
+    public function hookActionCustomerAddressFormBuilderModifier(array $params)
+    {
+        /** @var \Symfony\Component\Form\FormBuilder $formBuilder */
+        $formBuilder = $params['form_builder'];
+
+        $formBuilder
+            ->add('quartier', TextType::class, [
+                    'label' => 'Quartier',
+                    'required' => false,
+                ]
+            )
+        ;
+
+        $address = new Address($params['id']);
+        $params['data']['quartier'] = $address->quartier;
+
+        $formBuilder->setData($params['data']);
+    }
+
+    public function hookActionAfterCreateCustomerAddressFormHandler(array $params)
+    {
+        $this->updateData($params['id'],$params['form_data']);
+    }
+
+    public function hookActionAfterUpdateCustomerAddressFormHandler(array $params)
+    {
+        $this->updateData($params['id'],$params['form_data']);
+    }
+
+    /**
+     * Fonction qui va effectuer la mise à jour
+     * @param array $data
+     */
+    protected function updateData(int $id_address, array $data)
+    {
+        $entity = new Address($id_address);
+
+        if (!empty($data['quartier'])) {
+            $entity->quartier = $data['quartier'];
+        }
+
+        $entity->save();
     }
 }

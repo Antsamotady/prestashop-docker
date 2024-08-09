@@ -55,7 +55,11 @@ class Installer
      */
     private function registerHooks(Module $module): bool
     {
-        $hooks = [];
+        $hooks = [
+            'actionCustomerAddressFormBuilderModifier',
+            'actionAfterCreateCustomerAddressFormHandler',
+            'actionAfterUpdateCustomerAddressFormHandler',
+        ];
 
         return (bool) $module->registerHook($hooks);
     }

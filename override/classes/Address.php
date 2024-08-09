@@ -15,13 +15,13 @@ class Address extends AddressCore
      */
     /*
     * module: moduleoverrideaddress
-    * date: 2024-07-24 23:48:43
+    * date: 2024-08-05 02:25:31
     * version: 1.0.0
     */
     public $quartier;
     /*
     * module: moduleoverrideaddress
-    * date: 2024-07-24 23:48:43
+    * date: 2024-08-05 02:25:31
     * version: 1.0.0
     */
     public function __construct(
